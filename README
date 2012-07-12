@@ -1,5 +1,9 @@
-Loads a dll, checks for the public symbol 'OYK_MACOSX_GetNSView' and
-then attaches the returned NSView to a CocoaWindow.
+Loads a dll, checks for the public symbol
+
+  extern "C" NSView *OYK_MACOSX_GetNSView(NSRect *);
+
+This function is called with the NSRect for the window the returned
+NSView is attached to a CocoaWindow.
 
 If the NSView implements a 'shutdown' method, that is called when the
 app terminates.
