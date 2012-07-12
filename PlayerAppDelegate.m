@@ -15,17 +15,6 @@
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-/*
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *resources = [bundle resourcePath];
-    const char *resourcesDir = [resources UTF8String];
-    chdir(resourcesDir);
-    
-    NSView *tfView = [[TheRun2View alloc] initWithFrame: [window frame]];
-    [window setContentView: tfView];
-    [window makeFirstResponder: tfView];
-
- */
 
     NSArray *args = [[NSProcessInfo processInfo] arguments];
     if (1 >= [args count])

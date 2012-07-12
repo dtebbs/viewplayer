@@ -116,23 +116,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		C576D931138024C100C90AAB /* build-scons */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "PLATFORM=macosx therun -j 5";
-			buildConfigurationList = C576D938138024D400C90AAB /* Build configuration list for PBXLegacyTarget "build-scons" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/local/bin/scons;
-			buildWorkingDirectory = ../../../..;
-			dependencies = (
-			);
-			name = "build-scons";
-			passBuildSettingsInEnvironment = 0;
-			productName = "build-scons";
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		8D1107260486CEB800E47090 /* Player */ = {
 			isa = PBXNativeTarget;
@@ -172,7 +155,6 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Player */,
-				C576D931138024C100C90AAB /* build-scons */,
 			);
 		};
 /* End PBXProject section */
@@ -290,27 +272,6 @@
 			};
 			name = Release;
 		};
-		C576D932138024C100C90AAB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "build-scons";
-			};
-			name = Debug;
-		};
-		C576D933138024C100C90AAB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = "build-scons";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,15 +289,6 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C576D938138024D400C90AAB /* Build configuration list for PBXLegacyTarget "build-scons" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C576D932138024C100C90AAB /* Debug */,
-				C576D933138024C100C90AAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
