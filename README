@@ -1,0 +1,5 @@
+Loads a dll, checks for the public symbol 'OYK_MACOSX_GetNSView' and
+then attaches the returned NSView to a CocoaWindow.
+
+If the NSView implements a 'shutdown' method, that is called when the
+app terminates.
