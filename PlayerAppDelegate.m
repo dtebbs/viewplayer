@@ -22,21 +22,21 @@
         printf("Usage: Player <dylib> arguments\n");
         exit(1);
     }
-    
+
     // Load dylib
-    
+
     const char *dylibFile =[[args objectAtIndex: 1] UTF8String];
     printf("Loading file: %s\n", dylibFile);
     void *dl = dlopen(dylibFile, RTLD_LAZY);
-    
+
     if (0 == dl)
     {
         printf("Failed to load file: %s\n", dylibFile);
         exit(2);
     }
-    
+
     // Get 'OYK_MACOSX_GetNSView' function
-    
+
     void *getNSViewFn = dlsym(dl, "OYK_MACOSX_GetNSView");
     if (0 == getNSViewFn)
     {
@@ -45,12 +45,12 @@
     }
 
     // Call the function to get our NSView
-    
+
     printf("calling entry point\n");
     NSRect frame = [window frame];
     id nsViewPtr = ((void *(*)(void *))getNSViewFn)(&frame);
     printf("got %p\n", nsViewPtr);
-    
+
     if (![nsViewPtr isKindOfClass:[NSView class]])
     {
         printf("app returned ID of wrong type: %s", [[nsViewPtr className] UTF8String]);
@@ -61,6 +61,7 @@
     NSView *view = (NSView *)nsViewPtr;
     [window setContentView: view];
     [window makeFirstResponder: view];
+    [window setAcceptsMouseMovedEvents: YES];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
