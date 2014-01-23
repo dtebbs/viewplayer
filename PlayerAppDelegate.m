@@ -32,6 +32,8 @@
     if (0 == dl)
     {
         printf("Failed to load file: %s\n", dylibFile);
+        [self errorMessage:
+         [NSString stringWithFormat:@"Failed to load file %s", dylibFile, nil]];
         exit(2);
     }
 
@@ -41,6 +43,7 @@
     if (0 == getNSViewFn)
     {
         printf("Failed to find function 'OYK_MACOSX_GetNSView' in app %s", dylibFile);
+        [self errorMessage: [NSString stringWithFormat:@"Failed to find entry point OYK_MACOSX_GetNSView in file %s", dylibFile, nil]];
         exit(3);
     }
 
@@ -62,6 +65,23 @@
     [window setContentView: view];
     [window makeFirstResponder: view];
     [window setAcceptsMouseMovedEvents: YES];
+}
+
+- (void)errorMessage:(NSString *)msg
+{
+    CFOptionFlags response;
+    CFUserNotificationDisplayAlert(0,
+                                   kCFUserNotificationStopAlertLevel,
+                                   0, // icon
+                                   0, // sound
+                                   0, // localization
+                                   (__bridge CFStringRef)msg ,
+                                   0, // message
+                                   0, // button string
+                                   0, // alternate button
+                                   0, // other button
+                                   &response);
+    exit(1);
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
