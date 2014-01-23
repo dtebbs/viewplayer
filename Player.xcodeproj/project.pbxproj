@@ -140,6 +140,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Player" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -223,6 +225,9 @@
 				OTHER_LDFLAGS = "";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = Player;
+				SDKROOT = macosx;
+				SYMROOT = "$(PROJECT_DIR)/build";
+				VALID_ARCHS = i386;
 			};
 			name = Debug;
 		};
@@ -240,9 +245,13 @@
 				INFOPLIST_FILE = "Player-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = Player;
+				SDKROOT = macosx;
+				SYMROOT = "$(PROJECT_DIR)/build";
+				VALID_ARCHS = i386;
 			};
 			name = Release;
 		};
